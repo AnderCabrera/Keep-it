@@ -1,0 +1,17 @@
+{
+  "name": "keep-it",
+  "version": "1.0.0",
+  "description": "Remember things what you will do",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "author": "Ander",
+  "license": "ISC",
+  "devDependencies": {
+    "serve": "^14.2.0"
+  },
+  "dependencies": {
+    "prettier": "^2.8.4"
+  }
+}
