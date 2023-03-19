@@ -4,21 +4,28 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
     <title>Keep it</title>
   </head>
   <body>
     <div class="form-container">
       <label for="titleInput">Title</label>
-      <input type="text" id="titleInput" />
-      <br>
-      <label for="descInput">description</label>
-      <input type="text" id="descInput" />
-      <button type="submit">Done</button>
+      <input type="text" class="title-input" id="title-input" />
+      <br />
+      <label for="descInput">Description</label>
+      <textarea
+        name="description"
+        class="textarea"
+        id="description-input"
+        cols="80"
+        rows="10"
+      ></textarea>
+      <button type="submit" class="submit-btn" id="submit-btn">Done</button>
     </div>
     <main class="main">
       <div class="card">
-        <h2 class="title">Title</h2>
-        <p class="description">
+        <h2 class="title" id="title">Title</h2>
+        <p class="description" id="description">
           Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nisi fuga
           dolore dolores totam consequuntur incidunt quod, nulla magnam
           voluptatum placeat architecto odit eveniet vero error ducimus quae

@@ -1,0 +1,89 @@
+:root {
+  --whiteblue-color: #dbe2ef;
+  --white-color: #f9f7f7;
+  --navy-color: #3f72af;
+  --darkblue-color: #112d4e;
+  --calibri-font: 'calibri';
+  --montserrat-font: 'montserrat';
+}
+
+body {
+  background-color: var(--whiteblue-color);
+  font-family: var(--calibri-font);
+}
+
+/* ------------------ */
+/* | Form container | */
+/* ------------------ */
+
+.form-container {
+  background-color: var(--white-color);
+  border-radius: 10px;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+  margin: 0 auto 1em auto;
+  padding: 20px;
+  width: 40%;
+}
+
+.form-container label {
+  color: var(--navy-color);
+  font-size: 25px;
+  text-align: center;
+}
+
+.form-container .title-input {
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  border-radius: 5px;
+  box-sizing: border-box;
+  color: var(--darkblue-color);
+  display: block;
+  font-size: 20px;
+  margin: 0 0 20px;
+  padding: 10px;
+  width: 100%;
+}
+
+.form-container .textarea {
+  width: 99%;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  border-radius: 5px;
+  margin: 0 0 20px;
+  outline: none;
+  resize: vertical;
+}
+
+.form-container .submit-btn {
+  background-color: var(--navy-color);
+  border: 0;
+  color: var(--white-color);
+  cursor: pointer;
+  font-size: 20px;
+  font-weight: 700;
+  margin: 0 auto;
+  padding: 10px 20px;
+  width: 100%;
+}
+
+.form-container .submit-btn:active {
+  background-color: var(--darkblue-color);
+}
+
+/* ------------------ */
+/* | Card style     | */
+/* ------------------ */
+
+.main .card {
+  width: 40%;
+  padding: 1px 20px;
+  margin: 0 auto;
+  background-color: var(--white-color);
+  border-radius: 5px;
+}
+
+.main .card .title {
+  font-size: 1.5em;
+}
+
+.main .card .description {
+  font-size: 1.05em;
+}
