@@ -75,13 +75,14 @@ body {
 .main .card {
   width: 40%;
   padding: 1px 20px;
-  margin: 0 auto;
+  margin: 0 auto 1em auto;
   background-color: var(--white-color);
   border-radius: 5px;
 }
 
 .main .card .title {
   font-size: 1.5em;
+  word-wrap: break-word;
 }
 
 .main .card .description {
