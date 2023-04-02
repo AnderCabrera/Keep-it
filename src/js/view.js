@@ -4,12 +4,15 @@ import Model from './model.js';
 export default class View {
   constructor() {
     this.view = null;
+    this.main = document.getElementById('main');
     this.title = document.getElementById('title-input');
     this.description = document.getElementById('description-input');
-    this.addReminderBtn = new AddReminder();
     this.model = new Model();
+    this.addReminderBtn = new AddReminder();
 
-    this.addReminderBtn.onClick((title, description) => this.addReminder(title, description));
+    this.addReminderBtn.onClick((title, description) =>
+      this.addReminder(title, description)
+    );
   }
 
   setView(view) {
@@ -21,17 +24,49 @@ export default class View {
     this.addCard(reminder);
   }
 
+  deleteReminder(id) {
+    this.model.deleteReminder(id);
+    document.getElementById(id).remove();
+  }
+
   addCard(reminder) {
-    let main = document.getElementById('main');
-    let card = `
-    <div class="card" id=${reminder.id}>
+    let card = document.createElement('div');
+    card.innerHTML = `
       <h2 class="title" id="title">${reminder.title}</h2>
       <p class="description" id="description">${reminder.description}</p>
-    </div>`;
+    `;
 
-    let temp = document.createElement('div');
-    temp.innerHTML = card;
+    card.setAttribute('class', 'card');
+    card.setAttribute('id', reminder.id);
 
-    main.appendChild(temp)
+    // buttons container
+    let buttonsContainer = document.createElement('div');
+    buttonsContainer.setAttribute('class', 'options-buttons');
+    buttonsContainer.setAttribute('id', 'options-buttons');
+
+    // update button
+    let updateBtn = document.createElement('button');
+    updateBtn.setAttribute('class', 'update-btn');
+    updateBtn.setAttribute('id', 'update-btn');
+    updateBtn.setAttribute('type', 'button');
+    updateBtn.textContent = 'Update';
+
+    // delete button
+    let deleteBtn = document.createElement('button');
+    deleteBtn.setAttribute('class', 'delete-btn');
+    deleteBtn.setAttribute('id', 'delete-btn');
+    deleteBtn.setAttribute('type', 'button');
+    deleteBtn.textContent = 'Delete';
+    deleteBtn.onclick = () => this.deleteReminder(reminder.id);
+
+    // insertion buttons to container
+    buttonsContainer.appendChild(updateBtn);
+    buttonsContainer.appendChild(deleteBtn);
+
+    // insertion buttons container to div card
+    card.appendChild(buttonsContainer);
+
+    // inserting all to the parent div
+    main.appendChild(card);
   }
 }

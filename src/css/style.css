@@ -3,6 +3,8 @@
   --white-color: #f9f7f7;
   --navy-color: #3f72af;
   --darkblue-color: #112d4e;
+  --red-color: #D11A2A;
+  --red-color-active: #B1000A;
   --calibri-font: 'calibri';
   --montserrat-font: 'montserrat';
 }
@@ -87,4 +89,43 @@ body {
 
 .main .card .description {
   font-size: 1.05em;
+}
+
+/* ------------------ */
+/* | Buttons style  | */
+/* ------------------ */
+
+.main .card .options-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 0.5em;
+  margin: 0 0 1em 0;
+}
+
+.main .card .options-buttons button {
+  width: 25%;
+  padding: 0.7em;
+  cursor: pointer;
+  border-style: none;
+}
+
+.main .card .options-buttons .update-btn {
+  background-color: var(--navy-color);
+  color: var(--white-color);
+}
+
+.main .card .options-buttons .update-btn:active {
+  background-color: var(--darkblue-color);
+  color: var(--white-color);
+}
+
+.main .card .options-buttons .delete-btn {
+  background-color: var(--red-color);
+  color: var(--white-color);
+}
+
+.main .card .options-buttons .delete-btn:active {
+  background-color: var(--red-color-active);
+  color: var(--white-color);
 }

@@ -21,4 +21,13 @@ export default class Model {
     return {...reminder}
   }
 
+  findIndex(id) {
+    return this.reminders.findIndex(reminder => reminder.id === id)
+  }
+
+  deleteReminder(id) {
+    let index = this.findIndex(id);
+    this.reminders.splice(index, 1);
+    console.log(this.reminders);
+  }
 }
