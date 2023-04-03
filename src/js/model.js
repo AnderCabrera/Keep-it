@@ -30,4 +30,18 @@ export default class Model {
     this.reminders.splice(index, 1);
     console.log(this.reminders);
   }
+
+  updateReminder(id, title, description) {
+    let index = this.findIndex(id);
+
+    this.reminders[index].title = title;
+    this.reminders[index].description = description;
+
+    console.log(this.reminders);
+    console.log(JSON.stringify(this.reminders));
+  }
+
+  getReminders() {
+    return this.reminders;
+  }
 }

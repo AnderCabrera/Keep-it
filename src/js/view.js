@@ -1,5 +1,6 @@
-import AddReminder from './components/add-reminder.js';
 import Model from './model.js';
+import AddReminder from './components/add-reminder.js';
+import UpdateReminder from './components/update-reminder.js';
 
 export default class View {
   constructor() {
@@ -9,6 +10,7 @@ export default class View {
     this.description = document.getElementById('description-input');
     this.model = new Model();
     this.addReminderBtn = new AddReminder();
+    this.updateReminderBtn = new UpdateReminder();
 
     this.addReminderBtn.onClick((title, description) =>
       this.addReminder(title, description)
@@ -50,6 +52,22 @@ export default class View {
     updateBtn.setAttribute('id', 'update-btn');
     updateBtn.setAttribute('type', 'button');
     updateBtn.textContent = 'Update';
+    updateBtn.onclick = () => {
+      let card  = document.getElementById(`${reminder.id}`);
+      this.updateReminderBtn.title.value = card.children[0].innerText;
+      this.updateReminderBtn.description.value = card.children[1].innerText;
+
+      this.updateReminderBtn.onClick((title, description) => {
+        this.model.updateReminder(reminder.id, title, description);
+        
+        let card  = document.getElementById(`${reminder.id}`);
+        card.children[0].innerText = title;
+        card.children[1].innerText = description;
+      })
+      
+      this.updateReminderBtn.showModal();
+      this.updateReminderBtn.unShowModal();
+    };
 
     // delete button
     let deleteBtn = document.createElement('button');

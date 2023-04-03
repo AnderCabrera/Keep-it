@@ -3,10 +3,29 @@ export default class UpdateReminder {
     this.modalMain = document.getElementById('update-modal');
     this.title = document.getElementById('title-modal');
     this.description = document.getElementById('description-modal');
-    this.updateButton = document.getElementById('update-btn');
     this.cancelBtn = document.getElementById('cancel-button');
     this.continueBtn = document.getElementById('continue-button');
   }
 
-  onClick(reminder) {}
+  onClick(callback) {
+    this.continueBtn.onclick = () => {
+      if (this.title.value === '' || this.description.value === '') {
+        alert('insert something')
+      }
+
+      callback(this.title.value, this.description.value);
+
+      this.modalMain.style.display = 'none';
+    };
+  }
+
+  showModal() {
+    this.modalMain.style.display = 'block';
+  }
+
+  unShowModal() {
+    this.cancelBtn.onclick = () => {
+      this.modalMain.style.display = 'none';
+    }
+  }
 }
