@@ -41,9 +41,13 @@ export default class View {
   addCard(reminder) {
     let card = document.createElement('div');
     card.innerHTML = `
-      <h2 class="title" id="title">${reminder.title}</h2>
-      <p class="description" id="description">${reminder.description}</p>
+      <h2 class="title" id="title"></h2>
+      <p class="description" id="description"></p>
     `;
+
+    card.children[0].innerText = reminder.title;
+    card.children[1].innerText = reminder.description;
+
 
     card.setAttribute('class', 'card');
     card.setAttribute('id', reminder.id);
