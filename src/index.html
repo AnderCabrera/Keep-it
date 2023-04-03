@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- css -->
     <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/normailize.css" />
     <!-- javascript -->
     <script src="./js/index.js" type="module" defer></script>
     <title>Keep it</title>
@@ -44,5 +45,35 @@
         </div>
       </div>
     </main>
+    <div class="update-modal">
+      <div class="modal-content">
+        <h1>Edit</h1>
+        <!-- Title modal -->
+        <label for="title-modal">Title</label>
+        <br />
+        <input
+          type="text"
+          name="title-modal"
+          class="title-modal"
+          id="title-modal"
+        />
+        <br />
+        <!-- Description modal -->
+        <label for="description-modal">Description</label>
+        <br />
+        <textarea
+          name="description-modal"
+          class="textarea"
+          id="description-modal"
+          cols="80"
+          rows="5"
+        ></textarea>
+        <!-- Buttons -->
+        <div class="buttons-container">
+          <button type="button" id="cancel-button">Cancel</button>
+          <button type="button" id="continue-button">Continue</button>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
